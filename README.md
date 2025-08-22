@@ -1,11 +1,11 @@
 # SnakeScan
 
-> ROY CAMPBELL: As usual, this is a one-man infiltration mission.
->
-> SOLID SNAKE: Weapons and equipment OSP (on-site procurement)?
->
-> ROY CAMPBELL: Yes. This is a top-secret black op. Don't expect any official support.
->> Metal Gear Solid
+>> ROY CAMPBELL: As usual, this is a one-man infiltration mission.
+>>
+>> SOLID SNAKE: Weapons and equipment OSP (on-site procurement)?
+>>
+>> ROY CAMPBELL: Yes. This is a top-secret black op. Don't expect any official support.
+> Metal Gear Solid
 
 Have you ever landed a shell on a host, and your typical pivoting techniques (proxychains, Metasploit, etc.) aren't working? Does this host have Python installed in it? If so, you've come to the right place.
 
@@ -13,7 +13,7 @@ A fast and flexible Python network scanner, **SnakeScan**, can scan single hosts
 
 ---
 
-## **Features**
+## Features
 
 - Scan a **single host** or a **subnet** (CIDR notation, e.g., `192.168.1.0/24`)  
 - Specify ports as:
@@ -26,14 +26,14 @@ A fast and flexible Python network scanner, **SnakeScan**, can scan single hosts
 
 ---
 
-## **Requirements**
+## Requirements
 
 - Python 3.x  
 - No additional libraries (uses standard library modules: `socket`, `argparse`, `concurrent.futures`, `ipaddress`, `csv`)
 
 ---
 
-## **Usage**
+## Usage
 
 ```bash
 python3 port_scanner.py -t TARGET [-p PORTS]

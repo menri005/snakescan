@@ -11,18 +11,19 @@ output_rows = []
 # Parse arguments
 parser = argparse.ArgumentParser(description="Python TCP Port Scanner (host or subnet)")
 parser.add_argument("-t", "--target", required=True, help="Target host or subnet (CIDR)")
-parser.add_argument("-p", "--ports", default="1-1024",
-                    help="Ports (comma-separated or ranges, e.g., 22,80,443,8000-8080)")
+parser.add_argument("-p", "--ports", default="1-1024", help="Ports (comma-separated or ranges, e.g., 22,80,443,8000-8080)")
 args = parser.parse_args()
 
 # Parse ports (allow ranges and individual ports)
 ports = set()
+
 for part in args.ports.split(","):
     if "-" in part:
         start, end = part.split("-")
         ports.update(range(int(start), int(end) + 1))
     else:
         ports.add(int(part))
+
 ports = sorted(ports)
 
 # set the timeout to seconds
@@ -38,20 +39,12 @@ except ValueError:
 
 # Port scanning function
 def scan_port(ip, port):
-    try:
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            s.settimeout(timeout)
-            result = s.connect_ex((str(ip), port))
-            if result == 0:
-                print(f"[+] {ip} Port {port} is open")
-                output_rows.append(
-                    {
-                        'IP Address': str(ip),
-                        'Port': str(port)
-                    }
-                )
-    except Exception:
-        pass
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.settimeout(timeout)
+        result = s.connect_ex((str(ip), port))
+        if result == 0:
+            print(f"[+] {ip} Port {port} is open")
+            output_rows.append({'IP Address': str(ip), 'Port': str(port)})
 
 # Scan function per host
 # note you can raise the max workers to 500 but

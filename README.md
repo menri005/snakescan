@@ -1,11 +1,10 @@
 # SnakeScan
 
->> ROY CAMPBELL: As usual, this is a one-man infiltration mission.
->>
->> SOLID SNAKE: Weapons and equipment OSP (on-site procurement)?
->>
->> ROY CAMPBELL: Yes. This is a top-secret black op. Don't expect any official support.
-> Metal Gear Solid
+> ROY CAMPBELL: As usual, this is a one-man infiltration mission.
+>
+> SOLID SNAKE: Weapons and equipment OSP (on-site procurement)?
+>
+> ROY CAMPBELL: Yes. This is a top-secret black op. Don't expect any official support.
 
 Have you ever landed a shell on a host, and your typical pivoting techniques (proxychains, Metasploit, etc.) aren't working? Does this host have Python installed in it? If so, you've come to the right place.
 

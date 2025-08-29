@@ -35,7 +35,7 @@ A fast and flexible Python network scanner, **SnakeScan**, can scan single hosts
 ## Usage
 
 ```bash
-python3 port_scanner.py -t TARGET [-p PORTS]
+python3 snakescan.py -t TARGET [-p PORTS]
 ```
 
 This will create a CSV named `results.csv` after the scan is done. 
